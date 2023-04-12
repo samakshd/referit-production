@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: referit-frontend-deployment
+  namespace: referit
+  labels:
+    app: referit-frontend
+spec:
+  selector:
+    matchLabels:
+      app: referit-frontend
+  template:
+    metadata:
+      labels:
+        app: referit-frontend
+    spec:
+      containers:
+      - name: referit-frontend
+        image: referit-frontend
+        ports:
+        - containerPort: 3000
+        imagePullPolicy: IfNotPresent
+        env:
+          - name: REACT_APP_url
+            valueFrom: 
+              configMapKeyRef:
+                name: referit-frontend-configmap
+                key: url
+        # envFrom:
+        # - configMapRef:
+        #     name: referit-frontend-configmap
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: referit-frontend-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: referit-frontend
+  ports:
+  - name: http
+    port: 3000
+    targetPort: 3000
+    nodePort: 30000

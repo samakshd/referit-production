@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: referit-mongodb-statefulset
+  namespace: referit
+  labels:
+    app: referit-mongodb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: referit-mongodb
+  template:
+    metadata:
+      labels:
+        app: referit-mongodb
+    spec:
+      containers:
+      - name: mongodb
+        image: mongo
+        ports:
+        - containerPort: 27017
+        volumeMounts:
+          - name: mongodb-persistent-storage
+            mountPath: /data/db
+      volumes:
+        - name: mongodb-persistent-storage
+          persistentVolumeClaim:
+            claimName: referit-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: referit-mongodb-headless-service
+  namespace: referit
+  labels:
+    app: referit-mongodb
+spec:
+  selector:
+    app: referit-mongodb
+  ports:
+  - protocol: TCP
+    port: 27017
+    targetPort: 27017
+  clusterIP: None

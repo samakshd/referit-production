@@ -20,26 +20,18 @@ spec:
         ports:
         - containerPort: 3000
         imagePullPolicy: IfNotPresent
-        env:
-          - name: REACT_APP_url
-            valueFrom: 
-              configMapKeyRef:
-                name: referit-frontend-configmap
-                key: url
-        # envFrom:
-        # - configMapRef:
-        #     name: referit-frontend-configmap
+        envFrom:
+        - configMapRef:
+            name: referit-frontend-configmap
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: referit-frontend-service
 spec:
-  type: LoadBalancer
   selector:
     app: referit-frontend
   ports:
   - name: http
     port: 3000
     targetPort: 3000
-    nodePort: 30000

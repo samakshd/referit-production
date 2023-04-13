@@ -4,7 +4,7 @@ metadata:
   name: referit-frontend-configmap
   namespace: referit
 data:
-  url: referit-backend-service
+  REACT_APP_url: 'http://referit.com/api'
   REACT_APP_API_KEY: "AIzaSyCNL18mLquOSdaMqJwpqTkQXV8hPfYiWtM"
   REACT_APP_AUTH_DOMAIN: "referit-ea24a.firebaseapp.com"
   REACT_APP_PROJECT_ID: "referit-ea24a"

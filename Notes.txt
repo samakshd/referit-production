@@ -1,0 +1,13 @@
+//Initial Setup
+
+1. Create Namespace: kubectl create ns referit
+2. Set active K8s namespace to referit:  kubectl config set-context --current --namespace=referit
+
+3. Install nginx-ingress addons: minikube addons enable ingress
+
+4. Setup Database for referit: ./setup_database.sh
+
+5. Configure Secrets and Configmaps: ./setup_configuration.sh
+
+
+// Running Project: ./setup_project.sh

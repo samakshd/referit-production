@@ -23,7 +23,7 @@ spec:
         ports:
         - name: http
           containerPort: 5001
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         envFrom:
         - configMapRef:
             name: referit-backend-configmap

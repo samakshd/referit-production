@@ -5,7 +5,7 @@ metadata:
   namespace: referit
 data:
   PORT: '5001'
-  MONGO_URI: mongodb://referit-mongodb-headless-service:27017/referit-k8s
+  MONGO_URI: mongodb://mongodb-service:27017/referit-k8s
   API_KEY: "AIzaSyCNL18mLquOSdaMqJwpqTkQXV8hPfYiWtM"
   AUTH_DOMAIN: "referit-ea24a.firebaseapp.com"
   PROJECT_ID: "referit-ea24a"

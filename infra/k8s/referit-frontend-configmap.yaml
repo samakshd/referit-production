@@ -4,6 +4,7 @@ metadata:
   name: referit-frontend-configmap
   namespace: referit
 data:
+  PORT: '3001'
   REACT_APP_url: 'http://referit.com/api'
   REACT_APP_API_KEY: "AIzaSyCNL18mLquOSdaMqJwpqTkQXV8hPfYiWtM"
   REACT_APP_AUTH_DOMAIN: "referit-ea24a.firebaseapp.com"

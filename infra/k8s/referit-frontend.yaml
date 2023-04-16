@@ -16,9 +16,9 @@ spec:
     spec:
       containers:
       - name: referit-frontend
-        image: referit-frontend
+        image: masterchief01/referit-frontend:latest
         ports:
-        - containerPort: 3000
+        - containerPort: 3001
         imagePullPolicy: IfNotPresent
         envFrom:
         - configMapRef:
@@ -33,5 +33,5 @@ spec:
     app: referit-frontend
   ports:
   - name: http
-    port: 3000
-    targetPort: 3000
+    port: 3001
+    targetPort: 3001

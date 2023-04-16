@@ -16,11 +16,11 @@ spec:
           service:
             name: referit-frontend-service
             port: 
-              number: 3000
+              number: 3001
       - pathType: Prefix
         path: /api
         backend:
           service:
             name: referit-backend-service
             port: 
-              number: 3001
+              number: 5001

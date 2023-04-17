@@ -14,6 +14,7 @@
 
 Notes on Monitoring:
 1. create mongodb exporter in referit namespace and portmap it
+`helm install mongodb-exporter prometheus-community/prometheus-mongodb-exporter -f mongodb-exporter-values.yaml`
 `kubectl port-forward service/mongodb-exporter-prometheus-mongodb-exporter 9216`
 
 2. start prometheus UI and portmap it

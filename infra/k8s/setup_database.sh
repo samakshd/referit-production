@@ -4,5 +4,4 @@
 
 # k get events to see scheduling error for pv and pvc
 
-
 kubectl apply -f mongodb.yaml

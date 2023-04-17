@@ -1,0 +1,10 @@
+mongodb:
+  uri: "mongodb://mongodb-service:27017"
+
+tls_config:
+    insecure_skip_verify: true
+
+serviceMonitor:
+  enabled: true
+  additionalLabels:
+    release: prometheus

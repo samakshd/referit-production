@@ -11,3 +11,13 @@
 
 
 // Running Project: ./setup_project.sh
+
+Notes on Monitoring:
+1. create mongodb exporter in referit namespace and portmap it
+`kubectl port-forward service/mongodb-exporter-prometheus-mongodb-exporter 9216`
+
+2. start prometheus UI and portmap it
+`k port-forward service/prometheus-operated 9090 -n monitoring`
+
+3. start grafana UI and port map it 
+`➜  spe-major-pocs sudo kubectl port-forward service/prom-grafana 8080:80 -n monitoring` open localhost:8080

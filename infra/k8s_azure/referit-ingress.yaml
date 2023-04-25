@@ -25,7 +25,7 @@ spec:
           service:
             name: referit-backend-service
             port: 
-              number: 3001
+              number: 5001
       - pathType: Prefix
         path: /db
         backend:

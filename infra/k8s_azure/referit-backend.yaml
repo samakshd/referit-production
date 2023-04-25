@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: referit-backend-deployment
+  namespace: referit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: referit-backend
+  template:
+    metadata:
+      labels:
+        app: referit-backend
+    spec:
+      containers:
+      - name: referit-backend
+        image: masterchief01/referit-backend:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - name: http
+          containerPort: 3001
+        imagePullPolicy: Always
+        envFrom:
+        - configMapRef:
+            name: referit-backend-configmap
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: referit-backend-service
+  namespace: referit
+spec:
+  selector:
+    app: referit-backend
+  ports:
+  - name: http
+    port: 3001
+    targetPort: 3001

@@ -1,0 +1,35 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: referit-ingress
+  namespace: referit
+  annotations:
+    kubernetes.io/ingress.class: azure/application-gateway
+  labels:
+    name: referit-ingress
+spec:
+  rules:
+  - host: referit.eastus.cloudapp.azure.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: referit-frontend-service
+            port: 
+              number: 3000
+      - pathType: Prefix
+        path: /api
+        backend:
+          service:
+            name: referit-backend-service
+            port: 
+              number: 3001
+      - pathType: Prefix
+        path: /db
+        backend:
+          service:
+            name: mongo-express-service
+            port: 
+              number: 8081

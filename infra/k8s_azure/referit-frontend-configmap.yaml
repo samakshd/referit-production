@@ -6,6 +6,8 @@ metadata:
 data:
   REACT_APP_url: 'http://referit.eastus.cloudapp.azure.com/api'
   REACT_APP_API_KEY: "AIzaSyCNL18mLquOSdaMqJwpqTkQXV8hPfYiWtM"
+  WDS_SOCKET_HOST: '0.0.0.0'
+  WDS_SOCKET_PORT: '0'
   REACT_APP_AUTH_DOMAIN: "referit-ea24a.firebaseapp.com"
   REACT_APP_PROJECT_ID: "referit-ea24a"
   REACT_APP_STORAGE_BUCKET: "referit-ea24a.appspot.com"

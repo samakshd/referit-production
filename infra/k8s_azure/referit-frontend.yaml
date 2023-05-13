@@ -27,9 +27,15 @@ spec:
         ports:
         - containerPort: 3000
         imagePullPolicy: Always
+        env:
+        - name: REACT_APP_url
+          valueFrom:
+            configMapKeyRef:
+              name: referit-frontend-configmap
+              key: REACT_APP_url
         envFrom:
-        - configMapRef:
-            name: referit-frontend-configmap
+        - secretRef:
+            name: referit-frontend-secret
 ---
 apiVersion: v1
 kind: Service

@@ -4,14 +4,5 @@ metadata:
   name: referit-frontend-configmap
   namespace: referit
 data:
-  REACT_APP_url: 'http://referit.eastus.cloudapp.azure.com/api'
-  REACT_APP_API_KEY: "AIzaSyCNL18mLquOSdaMqJwpqTkQXV8hPfYiWtM"
-  WDS_SOCKET_HOST: '0.0.0.0'
-  WDS_SOCKET_PORT: '0'
-  REACT_APP_AUTH_DOMAIN: "referit-ea24a.firebaseapp.com"
-  REACT_APP_PROJECT_ID: "referit-ea24a"
-  REACT_APP_STORAGE_BUCKET: "referit-ea24a.appspot.com"
-  REACT_APP_MESSAGING_SENDER_ID: "647831266995"
-  REACT_APP_APP_ID: "1:647831266995:web:069e1659be48130287b2c6"
-  REACT_APP_MEASUREMENT_ID: "G-V4Q8X6YPLV"
+  REACT_APP_url: 'http://myreferit.eastus.cloudapp.azure.com/api'
   

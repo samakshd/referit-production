@@ -9,7 +9,7 @@ metadata:
     name: referit-ingress
 spec:
   rules:
-  - host: referit.eastus.cloudapp.azure.com
+  - host: myreferit.eastus.cloudapp.azure.com
     http:
       paths:
       - pathType: Prefix

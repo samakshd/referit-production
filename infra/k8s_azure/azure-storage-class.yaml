@@ -13,7 +13,7 @@ mountOptions:
 parameters:
   skuName: Standard_LRS
   location: eastus
-  storageAccount: referitstorageaccount
+  storageAccount: referitstorageacc
   resourceGroup: MC_myResourceGroup_myCluster_eastus
   secretNamespace: "default"
   secretName: azure-secret
